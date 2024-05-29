@@ -1,0 +1,25 @@
+services:
+  postgresql:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+        POSTGRES_USER: admin
+        POSTGRES_PASSWORD: password
+        POSTGRES_DB: database
+    volumes:
+       - postgres:/data/postgres
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+        PGADMIN_DEFAULT_EMAIL: email@email.email
+        PGADMIN_DEFAULT_PASSWORD: password!!
+        PGADMIN_SERVER_JSON_FILE: '/pgadmin4/servers.json'
+    volumes:
+      - ./servers.json:/pgadmin4/servers.json
+    ports:
+      - 6789:80
+
+volumes:
+  postgres:

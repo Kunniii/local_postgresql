@@ -1,0 +1,13 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "LOCALHOST",
+            "Group": "Servers",
+            "Port": 5432,
+            "Username": "admin",
+            "PasswordExecCommand": "echo 'password'",
+            "Host": "postgresql",
+            "MaintenanceDB": "postgres"
+        }
+    }
+}
